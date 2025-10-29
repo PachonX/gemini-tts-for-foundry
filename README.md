@@ -63,7 +63,7 @@ Este proyecto utiliza un workaround para la compatibilidad con el entorno de des
 
 # CHANGELOG - Gemini TTS for Foundry
 
-## [v1.3.0] - 2024-XX-XX
+## [v1.3.0] - 2024-29-10
 
 ### 🚀 **Nuevas Características**
 
@@ -130,7 +130,7 @@ Este proyecto utiliza un workaround para la compatibilidad con el entorno de des
 
 ---
 
-## [v1.0.0] - 2024-XX-XX
+## [v1.0.0] - 2024-29-10
 ### **Lanzamiento Inicial**
 - Funcionalidad básica de Text-to-Speech con Gemini API
 - Diálogo simple para generar audio
