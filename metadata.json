@@ -1,5 +1,4 @@
 {
   "name": "Gemini TTS for Chat",
-  "description": "A web application that provides a chat interface with a Text-to-Speech feature powered by the Google Gemini API, allowing users to generate and play back spoken text in various voices.",
-  "requestFramePermissions": []
+  "description": "A web application that provides a chat interface with a Text-to-Speech feature powered by the Google Gemini API, allowing users to generate and play back spoken text in various voices."
 }

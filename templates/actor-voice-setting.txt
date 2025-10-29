@@ -1,0 +1,8 @@
+<div class="form-group gemini-tts-actor-voice">
+    <label for="gemini-tts-voice-select">{{localize "GEMINI-TTS.ActorVoiceLabel"}}</label>
+    <select name="flags.{{moduleId}}.voice" id="gemini-tts-voice-select">
+        {{#each voices}}
+        <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+        {{/each}}
+    </select>
+</div>

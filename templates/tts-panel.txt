@@ -1,0 +1,36 @@
+<div class="form-group">
+    <label for="tts-text">{{localize "GEMINI-TTS.TextPlaceholder"}}</label>
+    <textarea name="tts-text" id="tts-text" rows="4" placeholder="{{localize 'GEMINI-TTS.TextPlaceholder'}}"></textarea>
+</div>
+
+<div class="form-group">
+    <label for="tts-voice">{{localize "GEMINI-TTS.VoiceLabel"}}</label>
+    <select name="tts-voice" id="tts-voice">
+        {{#each voices}}
+        <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+        {{/each}}
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="tts-volume-slider">{{localize "GEMINI-TTS.VolumeLabel"}} <span id="tts-volume-value">{{volume}}%</span></label>
+    <input type="range" id="tts-volume-slider" min="0" max="100" value="{{volume}}" class="slider">
+</div>
+
+<div class="panel-controls">
+    <button class="tts-speak-btn"><i class="fas fa-microphone-alt"></i> {{localize "GEMINI-TTS.SpeakButton"}}</button>
+    <button class="tts-stop-all-btn" style="background-color: #c9302c;"><i class="fas fa-stop-circle"></i> {{localize "GEMINI-TTS.StopAllButton"}}</button>
+</div>
+
+<div class="tts-queue">
+    <h4><i class="fas fa-list-ol"></i> {{localize "GEMINI-TTS.QueueTitle"}}</h4>
+    <ol class="tts-queue-list">
+        {{#if queue.length}}
+            {{#each queue}}
+            <li title="{{this.text}}">{{this.text}}</li>
+            {{/each}}
+        {{else}}
+            <li>&nbsp;</li>
+        {{/if}}
+    </ol>
+</div>

@@ -2,7 +2,7 @@
   "id": "gemini-tts-for-foundry",
   "title": "Gemini TTS for Foundry",
   "description": "Allows users to generate text-to-speech audio using the Google Gemini API and broadcast it to all players, providing a crucial communication tool for players without a microphone.",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "authors": [
     {
       "name": "Gemini Assistant"
@@ -12,18 +12,22 @@
     "minimum": "11",
     "verified": "12"
   },
-  "scripts": [
+  "esmodules": [
     "main.js"
   ],
   "styles": [
     "styles/style.css"
   ],
-  "lang": [
+  "languages": [
     {
       "lang": "en",
       "name": "English",
       "path": "lang/en.json"
     }
+  ],
+  "templates": [
+    "templates/actor-voice-setting.txt",
+    "templates/tts-panel.txt"
   ],
   "socket": true
 }

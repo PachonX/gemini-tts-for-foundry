@@ -9,6 +9,8 @@ Un módulo para Foundry VTT que permite a los usuarios generar audio de texto a 
 - **Selección de Voz:** Permite elegir entre varias voces de Gemini para adaptarse a diferentes personajes o narradores.
 - **Integración Sencilla:** Añade un botón de fácil acceso directamente en la ventana de chat de Foundry.
 - **Configuración Fácil:** El Game Master (GM) puede configurar la clave de la API necesaria a través del menú de ajustes del módulo.
+- **Voces por Personaje:** Asigna voces por defecto a personajes específicos desde su ficha de actor.
+- **Sistema de Caché y Cola:** Optimiza las llamadas a la API y gestiona múltiples solicitudes de audio de forma fluida.
 
 ## Instalación
 
@@ -43,7 +45,17 @@ Cualquier jugador en la partida puede generar audio:
 1.  En la ventana de chat, haz clic en el nuevo **ícono de micrófono** que aparece en la barra de controles.
 2.  Se abrirá una ventana emergente titulada "Generate Speech with Gemini".
 3.  Escribe el texto que deseas que se hable en el cuadro de texto.
-4.  Selecciona una de las voces disponibles en el menú desplegable.
+4.  Selecciona una de las voces disponibles en el menú desplegable. Si tu personaje tiene una voz asignada, se seleccionará automáticamente.
 5.  Haz clic en el botón **"Speak"**.
 
 El audio se generará y se reproducirá automáticamente para todos los jugadores en la partida.
+
+---
+
+### **Nota para Desarrolladores**
+
+Este proyecto utiliza un workaround para la compatibilidad con el entorno de desarrollo. Los archivos de plantilla de Handlebars (`.hbs`) se guardan en el repositorio como archivos `.txt`.
+
+**Acción Requerida antes de Publicar:** Antes de crear una nueva release o empaquetar el módulo, debes renombrar los siguientes archivos en la carpeta `templates/`:
+- `actor-voice-setting.txt` -> `actor-voice-setting.hbs`
+- `tts-panel.txt` -> `tts-panel.hbs`
