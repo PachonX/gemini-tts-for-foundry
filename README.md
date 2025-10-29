@@ -19,7 +19,6 @@ Un módulo para Foundry VTT que permite a los usuarios generar audio de texto a 
     ```
     https://github.com/PachonX/gemini-tts-for-foundry/releases/latest/download/module.json
     ```
-    *(Nota: Reemplaza `PachonX/gemini-tts-for-foundry` con tu usuario y nombre de repositorio si lo has subido a tu propia cuenta).*
 5.  Haz clic en **"Install"**.
 
 Una vez instalado, no olvides activar el módulo dentro de tu mundo de juego.
