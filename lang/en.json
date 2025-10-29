@@ -1,0 +1,29 @@
+{
+  "GEMINI-TTS": {
+    "ButtonTitle": "Gemini Text-to-Speech",
+    "DialogTitle": "Generate Speech with Gemini",
+    "TextPlaceholder": "Enter text to speak...",
+    "VoiceLabel": "Select Voice",
+    "SpeakButton": "Speak",
+    "CancelButton": "Cancel",
+    "Notifications": {
+      "ApiKeyMissing": "Gemini API Key is not configured. Please set it in the module settings.",
+      "ApiError": "Gemini API Error: {error}",
+      "EmptyText": "Cannot speak an empty text.",
+      "Generating": "Generating audio..."
+    },
+    "Voices": {
+      "Zephyr": "Zephyr (Deep Male)",
+      "Charon": "Charon (Male)",
+      "Kore": "Kore (Female)",
+      "Puck": "Puck (Youthful Male)",
+      "Fenrir": "Fenrir (Mature Male)"
+    },
+    "Settings": {
+      "ApiKey": {
+        "Name": "Google Gemini API Key",
+        "Hint": "Enter your API Key for the Google Gemini Generative Language API."
+      }
+    }
+  }
+}

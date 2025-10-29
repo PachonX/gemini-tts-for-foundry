@@ -1,0 +1,24 @@
+.chat-control-icon.gemini-tts-button {
+  margin-left: 5px;
+}
+
+.gemini-tts-dialog .dialog-buttons {
+  margin-top: 1em;
+}
+
+.gemini-tts-dialog textarea {
+  width: 100%;
+  height: 120px;
+  resize: vertical;
+}
+
+.gemini-tts-dialog select {
+  width: 100%;
+  margin-top: 0.5em;
+}
+
+.gemini-tts-dialog label {
+  font-weight: bold;
+  display: block;
+  margin-top: 1em;
+}
