@@ -765,6 +765,88 @@ Este proyecto utiliza un workaround para la compatibilidad con el entorno de des
 **Acción Requerida antes de Publicar:** Antes de crear una nueva release o empaquetar el módulo, debes renombrar los siguientes archivos en la carpeta `templates/`:
 - `actor-voice-setting.txt` -> `actor-voice-setting.hbs`
 - `tts-panel.txt` -> `tts-panel.hbs`
+---
+
+# CHANGELOG - Gemini TTS for Foundry
+
+## [v1.3.0] - 2024-XX-XX
+
+### 🚀 **Nuevas Características**
+
+#### **Seguridad y Arquitectura**
+- 🔒 **Arquitectura segura GM-centralizada**: Solo el Game Master realiza llamadas a la API
+- 🛡️ **Protección de credenciales**: La API Key nunca se expone a los jugadores
+- ⚡ **Sistema de rate limiting**: Límite de 30 solicitudes por minuto por usuario
+- ✅ **Validación robusta**: Sanitización de texto y límites de caracteres (5000 max)
+
+#### **Interfaz de Usuario Mejorada**
+- 🎛️ **Panel de control flotante**: Reemplaza el diálogo modal por ventana persistente
+- 📋 **Cola visual de audio**: Los usuarios ven el estado de sus solicitudes pendientes
+- 🔊 **Control de volumen global**: Ajuste maestro para todos los audios TTS
+- ⏹️ **Botón "Stop All Audio"**: Detiene inmediatamente toda reproducción
+- 🎭 **Integración en fichas de actor**: Configuración de voces por personaje
+
+#### **Rendimiento y Optimización**
+- 💾 **Sistema de cache inteligente**: Almacena audios frecuentes con hash eficiente
+- 🔄 **Procesamiento en cola**: Maneja múltiples solicitudes simultáneas
+- 🧹 **Gestión de memoria**: Liberación automática de URLs de audio
+- 🐛 **Sistema de debug**: Logging opcional para troubleshooting
+
+### 🎯 **Mejoras de Experiencia**
+
+#### **Para el Game Master**
+- 🤖 **Proceso completamente automático**: CERO popups de confirmación
+- ⏱️ **Sin interrupciones**: El GM puede seguir jugando sin molestias
+- 📊 **Control total**: Monitoreo de uso y prevención de abusos
+- 💰 **Control de costos**: Una sola llamada API por solicitud
+
+#### **Para los Jugadores**
+- 🎨 **Interfaz intuitiva**: Panel de control fácil de usar
+- ⏳ **Feedback visual**: Ver la cola de audios pendientes
+- 🎵 **Experiencia consistente**: Audio sincronizado para todos los jugadores
+- 🔧 **Personalización**: Voces específicas por personaje
+
+### 🔧 **Cambios Técnicos**
+
+#### **Arquitectura**
+- 🔄 **Sistema de sockets**: Comunicación bidireccional segura
+- 🏗️ **Clases modulares**: Validator, RateLimiter, Cache, Queue
+- 🌐 **Manejo de errores**: Clasificación inteligente de errores de API
+- 📡 **Transmisión eficiente**: Audio enviado una vez, reproducido en todos los clientes
+
+#### **Configuración**
+- ⚙️ **Settings expandidos**: 
+  - API Key (solo GM)
+  - Habilitar voces por actor
+  - Cache habilitado/deshabilitado
+  - Volumen global TTS
+
+### 🐛 **Correcciones de Errores**
+
+- **Gestión de memoria**: URLs de Blob liberadas correctamente
+- **Manejo de errores**: Notificaciones específicas por tipo de error
+- **Validación de entrada**: Prevención de textos vacíos o demasiado largos
+- **Sincronización**: Reproducción consistente en todos los clientes
+
+### 📈 **Compatibilidad**
+
+- ✅ **Foundry VTT**: Versiones 11-12 verificadas
+- ✅ **Sistemas**: Compatible con todos los sistemas de juego
+- ✅ **Módulos**: No presenta conflictos conocidos
+
+---
+
+## [v1.0.0] - 2024-XX-XX
+### **Lanzamiento Inicial**
+- Funcionalidad básica de Text-to-Speech con Gemini API
+- Diálogo simple para generar audio
+- Transmisión básica a todos los jugadores
+
+---
+
+**¿Listo para actualizar?** Simplemente instala la nueva versión y configura tu API Key en los ajustes del módulo. ¡El GM no necesita hacer nada más - el sistema funciona automáticamente! 🎉
+
+*Nota: Los usuarios de versiones anteriores pueden actualizar sin problemas - todas las configuraciones se mantienen.*
 ```
 
 ---
@@ -850,7 +932,7 @@ Este documento describe las futuras mejoras y características planificadas para
     <input type="range" id="tts-volume-slider" min="0" max="100" value="{{volume}}" class="slider">
 </div>
 
-<div class.panel-controls">
+<div class="panel-controls">
     <button class="tts-speak-btn"><i class="fas fa-microphone-alt"></i> {{localize "GEMINI-TTS.SpeakButton"}}</button>
     <button class="tts-stop-all-btn" style="background-color: #c9302c;"><i class="fas fa-stop-circle"></i> {{localize "GEMINI-TTS.StopAllButton"}}</button>
 </div>
@@ -867,4 +949,3 @@ Este documento describe las futuras mejoras y características planificadas para
         {{/if}}
     </ol>
 </div>
-```
